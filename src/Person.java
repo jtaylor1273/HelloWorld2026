@@ -1,3 +1,4 @@
+import java.util.Calendar;
 import java.util.Date;
 
 public class Person {
@@ -10,10 +11,10 @@ public class Person {
 
 
     //constructors
-    public Person(String firstNameIn, String lastNameIn, Integer ageIn ){
+    public Person(String firstNameIn, String lastNameIn, Date dateOfBirthIn ){
         this.firstName = firstNameIn;
         this.lastName = lastNameIn;
-        this.age = ageIn;
+        this.age = calculateAge(dateOfBirthIn);
     }
 
     //methods
@@ -23,7 +24,14 @@ public class Person {
     }
 
     private Integer calculateAge(Date dobIn){
-        return 1;
+        Date now = new Date();
+        Date dob = new Date(1972, Calendar.DECEMBER, 21);
+        this.age = dob.compareTo(now);
+
+
+        //how to I subtract date 1 from date 2......
+
+        return this.age;
     }
 
 
