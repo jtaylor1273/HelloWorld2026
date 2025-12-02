@@ -2,14 +2,20 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() {
     //variables
-    List<String> myNames = new ArrayList<>();
-    myNames.add("John");
-    myNames.add("Shannon");
+    List<Person> myPeople = new ArrayList<Person>();
+    myPeople.add(new Person("John","Taylor", 51));
+    myPeople.add(new Person("Shannon","Taylor", 49));
+    myPeople.add(new Person("Isabel","Taylor", 19));
+    myPeople.add(new Person("Emily","Taylor", 17));
 
     //control section
-    for (String name : myNames)
+    for (Person p : myPeople)
     {
-        var greeting = new HelloWorld(name);
-        System.out.println(greeting);
+        System.out.println(p);
     }
+
+    Date now = new Date();
+    Date dob = new Date(1972, Calendar.DECEMBER, 21);
+
+    System.out.println(Date.from(dob.toInstant()));
 }
